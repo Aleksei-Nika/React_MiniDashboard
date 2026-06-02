@@ -12,16 +12,16 @@ function FilterList({ users }){
     return (
         <div>
             <input 
-            type="text"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
+                type="text"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
             />
             <ul>
-            {filteredUsers.map(user=>
-                <li key={user.id}>{user.name}</li>
-            )}
+                {filteredUsers.map(user=>
+                    <li key={user.id}>{user.name}</li>
+                )}
             </ul>
         </div>
-    )
+    );
 };
 export default FilterList;

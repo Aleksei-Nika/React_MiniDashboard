@@ -10,14 +10,15 @@ export const generateMockData = () => {
         const randomCategories = categories[Math.floor(Math.random()*categories.length)];
         const randomeStatus = statuses[Math.floor(Math.random()*statuses.length)];
         const randomAmount = Math.floor(Math.random()*10000)+500;
-        const date = new Date(startDate.getDate()+Math.random);
+        const date = new Date(startDate.getTime()+Math.random()*(30*24*60*60*1000));
         data.push({
             id: i,
             title: `Задача №${i}. ${randomCategories}`,
             amoumt: randomAmount,
+            category: randomCategories,
             status: randomeStatus,
             date: date.toISOString().split('T')[0]
-        })
+        });
     }
-    return data
+    return data;
 }

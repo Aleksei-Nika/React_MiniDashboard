@@ -1,6 +1,6 @@
 import React from "react";
 
-function FilterPanel({filters, setFilters, onOpemModal}){
+function FilterPanel({filters, setFilters, onOpenModal}){
     const handleChange = (e) => {
         const {name, value} = e.target;
         setFilters(prev => ({...prev, [name]:value}));
@@ -10,11 +10,11 @@ function FilterPanel({filters, setFilters, onOpemModal}){
             <input type="text" name="search" value={filters.search} onChange={handleChange} />
             <select name="category" value={filters.category} onChenge={handleChange}>
                 <option value=''>Все</option>
-                <option value='Finance'>Все</option>
-                <option value='Marceting'>Все</option>
-                <option value='Dev'>Все</option>
-                <option value='HR'>Все</option>
-                <option value='Sales'>Все</option>
+                <option value='Finance'>Finance</option>
+                <option value='Marceting'>Marceting</option>
+                <option value='Dev'>Dev</option>
+                <option value='HR'>HR</option>
+                <option value='Sales'>Sales</option>
             </select>
             <select name="status" value={filters.status} onChange={handleChange}>
                 <option value=''>Все</option>
@@ -22,8 +22,11 @@ function FilterPanel({filters, setFilters, onOpemModal}){
                 <option value='В обработке'>В обработке</option>
                 <option value='Отклонено'>Отклонено</option>
             </select>
+            <button onClick={onOpenModal}>
+                Добавить запись
+            </button>
         </div>
-    )
+    );
 }
 
 export default FilterPanel;

@@ -4,17 +4,18 @@ import DashboardMetrics from './DashboardMetrics';
 import FilterPanel from "./FilterPanel";
 
 function App() {
-  const [rawData, setRawData] = useState(() => generateMockData);
-  const [filters, setFilters] = useState({search: '', category:''});
+  const [rawData, setRawData] = useState(() => generateMockData());
+  const [filters, setFilters] = useState({search:'', category:'', status:''});
 
   const filteredData = useMemo(() => {
 
   }, [rawData, filters.search, filters.category, filters.status]);
 
-  return
+  return (
   <>
-  <DashboardMetrics filredData={rawData} />
+    <DashboardMetrics filredData={rawData} />
   </>
+  )
 }
 
-export default App
+export default App;
