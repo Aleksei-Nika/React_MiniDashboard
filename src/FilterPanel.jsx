@@ -8,7 +8,7 @@ function FilterPanel({filters, setFilters, onOpenModal}){
     return (
         <div style={{display: 'flex', gap:'15px'}}>
             <input type="text" name="search" value={filters.search} onChange={handleChange} />
-            <select name="category" value={filters.category} onChenge={handleChange}>
+            <select name="category" value={filters.category} onChange={handleChange}>
                 <option value=''>Все</option>
                 <option value='Finance'>Finance</option>
                 <option value='Marceting'>Marceting</option>
