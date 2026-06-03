@@ -13,7 +13,7 @@ function App() {
 
   return (
   <>
-    <DashboardMetrics filredData={rawData} />
+    <DashboardMetrics filteredData={rawData} />
   </>
   )
 }
